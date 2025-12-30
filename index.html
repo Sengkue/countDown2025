@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025 Final Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #05070a;
+            background: radial-gradient(circle at center, #1a202c 0%, #05070a 100%);
             color: #fff;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,7 +38,9 @@
         }
 
         .card {
-            background: #111;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 3rem;
             border-radius: 20px;
             text-align: center;
@@ -43,21 +48,22 @@
         }
 
         h1 {
-            font-size: 1.2rem;
-            letter-spacing: 5px;
+            font-size: 1.5rem;
+            letter-spacing: 8px;
             color: #ff007f;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
-            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+            margin-bottom: 30px;
             text-transform: uppercase;
         }
 
         #timer {
-            font-size: 4rem;
-            font-weight: 900;
-            font-family: monospace;
-            background: linear-gradient(to bottom, #fff, #888);
+            font-size: 4.5rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to bottom, #fff, #aaa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
         }
 
         .labels {
