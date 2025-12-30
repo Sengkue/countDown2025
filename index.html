@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Final Countdown</title>
+    <style>
+        body {
+            background: #05070a;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* The glowing "flower light" border effect */
+        .flower-border {
+            position: relative;
+            padding: 5px; /* Border thickness */
+            border-radius: 25px;
+            background: linear-gradient(90deg, #ff007f, #7a00ff, #00d4ff, #ff007f);
+            background-size: 400%;
+            animation: flow 8s linear infinite;
+            box-shadow: 0 0 50px rgba(122, 0, 255, 0.4);
+        }
+
+        @keyframes flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: #111;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            min-width: 350px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        #timer {
+            font-size: 4rem;
+            font-weight: 900;
+            font-family: monospace;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .labels {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 10px;
+            font-size: 0.7rem;
+            color: #666;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flower-border">
+        <div class="card">
+            <h1>Year End 2025</h1>
+            <div id="timer">00:00:00:00</div>
+            <div class="labels">
+                <span>DAYS</span>
+                <span>HRS</span>
+                <span>MIN</span>
+                <span>SEC</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set target to Midnight tomorrow (end of 2025)
+        const target = new Date("December 31, 2025 23:59:59").getTime();
+
+        function update() {
+            const now = new Date().getTime();
+            const diff = target - now;
+
+            if (diff < 0) {
+                document.getElementById("timer").innerText = "HAPPY 2026!";
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const format = (num) => num.toString().padStart(2, '0');
+            document.getElementById("timer").innerText = `${format(d)}:${format(h)}:${format(m)}:${format(s)}`;
+        }
+
+        setInterval(update, 1000);
+        update(); // Run immediately
+    </script>
+</body>
+</html>
