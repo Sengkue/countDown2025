@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Control 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="missionCanvas"></canvas>
+
+    <div class="hud-overlay">
+        <div class="top-bar">
+            <span class="status">● LIVE FEED</span>
+            <span class="mission-name">SPACEX / STARSHIP FLIGHT 2026</span>
+        </div>
+
+        <div class="center-stage">
+            <h1 class="t-minus-title">T-MINUS TO LAUNCH</h1>
+            <div class="timer-row">
+                <div class="time-block">
+                    <span id="d">00</span>
+                    <label>DAY</label>
+                </div>
+                <div class="sep">:</div>
+                <div class="time-block">
+                    <span id="h">00</span>
+                    <label>HR</label>
+                </div>
+                <div class="sep">:</div>
+                <div class="time-block">
+                    <span id="m">00</span>
+                    <label>MIN</label>
+                </div>
+                <div class="sep">:</div>
+                <div class="time-block">
+                    <span id="s">00</span>
+                    <label>SEC</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-stats">
+            <div>ALTITUDE: <span id="alt">Loading...</span> km</div>
+            <div>VELOCITY: <span id="vel">27,000</span> km/h</div>
+            <div>COORDINATES: <span id="coords">LAT 28.5 / LON -80.6</span></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Pure Black Space */
+    color: #fff;
+    font-family: 'Exo 2', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.glass-interface {
+    position: relative;
+    z-index: 10;
+    background: rgba(10, 10, 30, 0.4); /* Very dark blue tint */
+    backdrop-filter: blur(4px); /* Slight blur to see stars behind */
+    padding: 40px 60px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 50px rgba(100, 0, 255, 0.2); /* Purple Glow */
+    text-align: center;
+}
+
+.galaxy-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #fff, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timer-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.timer-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.timer-card span {
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.8); /* Cyan Glow */
+}
+
+.timer-card p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.footer-text {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+}

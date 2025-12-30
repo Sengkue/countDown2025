@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown 2026 Collection</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- DASHBOARD STYLES --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #050505;
+        font-family: "Lato", sans-serif;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Subtle animated background */
+        background: radial-gradient(
+          circle at 50% 50%,
+          #1a2a3a 0%,
+          #000000 100%
+        );
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        margin-bottom: 50px;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        text-align: center;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        width: 90%;
+        max-width: 1200px;
+        padding: 20px;
+      }
+
+      /* The Card Link */
+      .project-card {
+        text-decoration: none;
+        color: white;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 180px;
+      }
+
+      /* Hover Effects */
+      .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 15px 30px rgba(0, 255, 255, 0.15);
+      }
+
+      .project-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .project-card p {
+        font-size: 0.9rem;
+        color: #aaa;
+        text-align: center;
+      }
+
+      .tag {
+        margin-top: 15px;
+        font-size: 0.75rem;
+        padding: 5px 10px;
+        border-radius: 20px;
+        background: rgba(0, 255, 255, 0.1);
+        color: #0ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Specific colors for the cards to distinguish them */
+      .card-1:hover .tag {
+        color: #fff;
+        background: #555;
+      }
+      .card-2:hover .tag {
+        color: #fff;
+        background: #ffeb3b;
+      }
+      .card-3:hover .tag {
+        color: #fff;
+        background: #ff5722;
+      }
+      .card-4:hover .tag {
+        color: #fff;
+        background: #8e44ad;
+      }
+      .card-5:hover .tag {
+        color: #000;
+        background: #00ffaa;
+        box-shadow: 0 0 10px #00ffaa;
+      }
+      /* Add to dashboard CSS */
+      .card-6:hover .tag {
+        color: #fff;
+        background: #2200ff;
+        box-shadow: 0 0 15px #2200ff;
+      }
+      .card-7:hover {
+        border-color: #ff0055;
+        background: rgba(50, 0, 20, 0.5);
+      }
+      .card-8:hover {
+        border-color: #00d2ff;
+      }
+      .card-7:hover .tag {
+        color: #000;
+        background: #00d2ff;
+        box-shadow: 0 0 15px #00d2ff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Project Archives: 2026</h1>
+
+    <div class="grid-container">
+      <a href="project01/index.html" class="project-card card-1">
+        <h2>Project 01</h2>
+        <p>Basic Timer</p>
+        <div class="tag">Standard</div>
+      </a>
+
+      <a href="project02/index.html" class="project-card card-2">
+        <h2>Project 02</h2>
+        <p>Rain & Emoji</p>
+        <div class="tag">Animation</div>
+      </a>
+
+      <a href="project03/index.html" class="project-card card-3">
+        <h2>Project 03</h2>
+        <p>Canvas Fireworks</p>
+        <div class="tag">Physics</div>
+      </a>
+
+      <a href="project04/index.html" class="project-card card-4">
+        <h2>Project 04</h2>
+        <p>3D Warp Speed</p>
+        <div class="tag">Advanced</div>
+      </a>
+
+      <a href="project05/index.html" class="project-card card-5">
+        <h2>Project 05</h2>
+        <p>Lao Blessings</p>
+        <div class="tag">Ultimate</div>
+      </a>
+      <a href="project06/index.html" class="project-card card-6">
+        <h2>Project 06</h2>
+        <p>Spiral Galaxy</p>
+        <div class="tag">Cosmic</div>
+      </a>
+      <a href="project07/index.html" class="project-card card-7">
+        <h2>Project 07</h2>
+        <p>SpaceX Mission</p>
+        <div class="tag">Hologram</div>
+      </a>
+    </div>
+  </body>
+</html>
