@@ -23,7 +23,10 @@ for(let i=0; i<300; i++) {
 }
 
 // --- 2. THE 3D EARTH (DOT SPHERE) ---
-const GLOBE_RADIUS = 180;
+// Check if user is on mobile
+const isMobile = window.innerWidth < 768;
+// Reduce size on mobile (80) vs desktop (180)
+const GLOBE_RADIUS = isMobile ? 85 : 180; 
 const DOT_COUNT = 400;
 const globeDots = [];
 
@@ -90,12 +93,12 @@ function draw() {
 
     // C. Draw Rocket (Orbiting)
     rocketAngle += 0.02; // Rocket speed
-    const orbitRadius = GLOBE_RADIUS + 60;
+    const orbitRadius = GLOBE_RADIUS + (isMobile ? 30 : 60); // Tighter orbit on mobile
     
     // Calculate Rocket 3D position (Orbit inclined)
     let rx = Math.cos(rocketAngle) * orbitRadius;
     let rz = Math.sin(rocketAngle) * orbitRadius;
-    let ry = Math.sin(rocketAngle * 2) * 40; // Wave motion in Y
+    let ry = Math.sin(rocketAngle * 2) * (isMobile ? 20 : 40); // Wave motion in Y
 
     // Rocket Perspective
     let rScale = 300 / (300 + rz);
