@@ -91,3 +91,41 @@ canvas {
     font-size: 1.2rem;
     color: #ddd;
 }
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto; /* Allow scrolling */
+        overflow-x: hidden;
+    }
+
+    .glass-container {
+        width: 90%;
+        min-width: auto; /* Override fixed width */
+        padding: 30px 20px;
+        margin: 40px auto;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .timer-box {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Hide the colon separators on mobile */
+    .divider {
+        display: none;
+    }
+
+    .time-segment {
+        flex: 1 1 40%; /* 2 items per row */
+    }
+
+    .time-segment span {
+        font-size: 2.5rem;
+    }
+}

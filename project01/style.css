@@ -78,3 +78,32 @@ body {
         opacity: 0.5;
     }
 }
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto; /* Allow scrolling */
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Stack the time boxes */
+    #countdown {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .time-box {
+        min-width: 80px;
+        padding: 15px;
+        flex: 1 1 40%; /* 2 boxes per row */
+    }
+
+    .time-box span {
+        font-size: 2.5rem;
+    }
+}

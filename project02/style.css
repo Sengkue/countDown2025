@@ -67,3 +67,29 @@ h1 {
     font-size: 0.8rem;
     text-transform: uppercase;
 }
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    .countdown-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #countdown {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .time-box {
+        min-width: 70px;
+        padding: 15px;
+        flex: 1 1 40%; /* 2 boxes per row */
+    }
+
+    .time-box span {
+        font-size: 2rem;
+    }
+}

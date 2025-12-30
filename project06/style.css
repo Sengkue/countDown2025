@@ -78,3 +78,35 @@ canvas {
     color: rgba(255,255,255,0.5);
     letter-spacing: 2px;
 }
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .glass-interface {
+        width: 90%;
+        padding: 30px 20px;
+        margin: 50px auto;
+    }
+
+    .galaxy-title {
+        font-size: 1.8rem;
+    }
+
+    .timer-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .timer-card {
+        flex: 1 1 40%; /* 2 cards per row */
+        min-width: 80px;
+    }
+
+    .timer-card span {
+        font-size: 2rem;
+    }
+}
