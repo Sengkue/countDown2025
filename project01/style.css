@@ -1,0 +1,80 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.countdown-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+#countdown {
+    display: flex;
+    gap: 15px;
+}
+
+.time-box {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 12px;
+    min-width: 100px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.time-box span {
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: block;
+    color: #00d4ff;
+}
+
+.time-box p {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+}
+
+/* Container for the rain to ensure it doesn't cause scrollbars */
+body {
+    overflow: hidden; /* Prevents scrollbars if particles go off-screen */
+}
+
+.particle {
+    position: fixed;
+    top: -50px; /* Start above the screen */
+    z-index: -1; /* Place them behind the countdown text */
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.5rem;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg); /* Fall past the bottom */
+        opacity: 0.5;
+    }
+}
