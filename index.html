@@ -3,121 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025 Final Countdown</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <title>2026 New Year Countdown</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="aurora"></div>
-    <div class="card">
-        <h1>Countdown to 2025</h1>
-        <div id="timer" class="timer">
-            <div class="time-group">
-                <div class="flip-card">
-                    <div class="top">00</div>
-                    <div class="bottom">00</div>
-                    <div class="flipper"><div class="top">00</div><div class="bottom">00</div></div>
-                </div>
-                <div class="label">Days</div>
+
+    <div class="countdown-container">
+        <h1>Countdown to 2026</h1>
+        <div id="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Days</p>
             </div>
-            <div class="time-group">
-                <div class="flip-card">
-                    <div class="top">00</div>
-                    <div class="bottom">00</div>
-                    <div class="flipper"><div class="top">00</div><div class="bottom">00</div></div>
-                </div>
-                <div class="label">Hours</div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
             </div>
-            <div class="time-group">
-                <div class="flip-card">
-                    <div class="top">00</div>
-                    <div class="bottom">00</div>
-                    <div class="flipper"><div class="top">00</div><div class="bottom">00</div></div>
-                </div>
-                <div class="label">Minutes</div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
             </div>
-            <div class="time-group">
-                <div class="flip-card">
-                    <div class="top">00</div>
-                    <div class="bottom">00</div>
-                    <div class="flipper"><div class="top">00</div><div class="bottom">00</div></div>
-                </div>
-                <div class="label">Seconds</div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
             </div>
         </div>
     </div>
 
-    <script src="particles.js"></script>
-    <script>
-        const target = new Date("December 31, 2025 23:59:59").getTime();
-        const timerEl = document.getElementById('timer');
-        const aurora = document.getElementById('aurora');
-
-        // Aurora Effect
-        document.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-            aurora.style.background = `radial-gradient(circle at ${x}px ${y}px, hsla(190, 100%, 70%, 0.2), transparent 40%)`;
-            aurora.style.opacity = '1';
-        });
-
-        function update() {
-            const now = new Date().getTime();
-            const diff = target - now;
-
-            if (diff <= 0) {
-                timerEl.innerHTML = "<div class='happy-new-year'>HAPPY 2026!</div>";
-                return;
-            }
-
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            updateSegment(0, d.toString().padStart(2, '0'));
-            updateSegment(1, h.toString().padStart(2, '0'));
-            updateSegment(2, m.toString().padStart(2, '0'));
-            updateSegment(3, s.toString().padStart(2, '0'));
-        }
-        
-        function updateSegment(index, value) {
-            const flipCard = timerEl.children[index].querySelector('.flip-card');
-            
-            // If the card is already flipping, don't do anything
-            if (flipCard.classList.contains('flip')) {
-                return;
-            }
-
-            const topEl = flipCard.querySelector('.top');
-            const bottomEl = flipCard.querySelector('.bottom');
-            const flipper = flipCard.querySelector('.flipper');
-            const flipperTop = flipper.querySelector('.top');
-            const flipperBottom = flipper.querySelector('.bottom');
-
-            const currentValue = topEl.innerText;
-            if (currentValue === value) return;
-
-            // Set the "before" state
-            flipperTop.innerText = currentValue;
-            topEl.innerText = value;
-            
-            // Set the "after" state on the flipper's bottom half
-            flipperBottom.innerText = value;
-
-            // Start the flip
-            flipCard.classList.add('flip');
-
-            flipper.addEventListener('transitionend', () => {
-                // After the flip, update the static bottom half and reset
-                bottomEl.innerText = value;
-                flipCard.classList.remove('flip');
-            }, { once: true });
-        }
-
-        setInterval(update, 1000);
-        update();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

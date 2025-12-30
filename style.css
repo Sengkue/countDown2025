@@ -1,167 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Poppins:wght@300;500&display=swap');
-
-:root {
-    --bg-color: #02040a;
-    --glow-color: hsl(190, 100%, 50%);
-    --card-bg: rgba(10, 15, 25, 0.5);
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    overflow: hidden;
+}
+
+.countdown-container {
     text-align: center;
-}
-
-#aurora {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, hsla(190, 100%, 70%, 0.2), transparent 40%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
-.card {
-    background: var(--card-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-radius: 20px;
-    padding: 3rem 4.5rem; /* Increased padding */
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    inset: -2px; /* Make border slightly thicker */
-    border-radius: 22px;
-    background:
-        linear-gradient(145deg, var(--glow-color), transparent 40%),
-        linear-gradient(-35deg, hsl(280, 100%, 50%), transparent 35%);
-    z-index: -1;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
-}
-
-.card:hover::before {
-    opacity: 0.8;
 }
 
 h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 12px;
-    color: #fff;
-    text-shadow: 0 0 8px var(--glow-color);
-    margin: 0 0 45px 0; /* Increased margin */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+#countdown {
+    display: flex;
+    gap: 15px;
+}
+
+.time-box {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 12px;
+    min-width: 100px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.time-box span {
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: block;
+    color: #00d4ff;
+}
+
+.time-box p {
+    margin-top: 10px;
+    font-size: 0.8rem;
     text-transform: uppercase;
-}
-
-.timer {
-    display: flex;
-    gap: 30px; /* Increased gap */
-    justify-content: center;
-}
-
-.time-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.label {
-    font-size: 0.7rem;
     color: #888;
-    margin-top: 20px; /* Increased margin */
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.flip-card {
-    display: inline-flex;
-    flex-direction: column;
-    position: relative;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 6rem; /* Increased font size */
-    font-weight: 900;
-    color: #fff;
-    line-height: 1;
-    width: 120px; /* Increased width */
-    height: 120px; /* Increased height */
-    perspective: 800px; /* Increased perspective */
-}
-
-.top, .bottom, .flipper {
-    background: #1a1a1a;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    left: 0;
-    text-align: center;
-    box-shadow: 0 0 6px rgba(0,0,0,0.7) inset;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-}
-
-.top {
-    top: 0;
-    border-radius: 10px 10px 0 0;
-    line-height: 120px; /* Adjusted line-height */
-    transform-origin: bottom;
-    z-index: 1;
-}
-
-.bottom {
-    bottom: 0;
-    border-radius: 0 0 10px 10px;
-    line-height: 0;
-    transform-origin: top;
-    z-index: 1;
-}
-
-.flipper {
-    z-index: 10;
-    line-height: 120px; /* Adjusted line-height */
-    top: 0;
-    border-radius: 10px 10px 0 0;
-    transform-origin: bottom;
-    /* Smoother cubic-bezier and added shadow/brightness */
-    transition: transform 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045), box-shadow 0.8s, filter 0.8s;
-}
-
-.flip-card.flip .flipper {
-    transform: rotateX(-180deg);
-    box-shadow: 0 -5px 15px rgba(255,255,255,0.1), 0 0 6px rgba(0,0,0,0.7) inset;
-    filter: brightness(0.9);
-}
-
-.flipper .bottom { line-height: 0; }
-.flipper .top { line-height: 120px; } /* Adjusted line-height */
-
-.happy-new-year {
-    font-size: 3rem;
-    font-family: 'Orbitron', sans-serif;
-    color: var(--glow-color);
-    text-shadow: 0 0 20px var(--glow-color);
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
 }
