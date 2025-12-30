@@ -7,80 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: radial-gradient(circle at center, #1a202c 0%, #05070a 100%);
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        /* The glowing "flower light" border effect */
-        .flower-border {
-            position: relative;
-            padding: 5px; /* Border thickness */
-            border-radius: 25px;
-            background: linear-gradient(90deg, #ff007f, #7a00ff, #00d4ff, #ff007f);
-            background-size: 400%;
-            animation: flow 8s linear infinite;
-            box-shadow: 0 0 50px rgba(122, 0, 255, 0.4);
-        }
-
-        @keyframes flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            min-width: 350px;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            letter-spacing: 8px;
-            color: #ff007f;
-            text-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        #timer {
-            font-size: 4.5rem;
-            font-weight: 700;
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(to bottom, #fff, #aaa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
-        }
-
-        .labels {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            margin-top: 10px;
-            font-size: 0.7rem;
-            color: #666;
-            letter-spacing: 2px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="flower-border">
+    <div class="rotating-border">
         <div class="card">
-            <h1>Year End 2025</h1>
+            <h1>Countdown to 2025</h1>
             <div id="timer">00:00:00:00</div>
             <div class="labels">
                 <span>DAYS</span>
